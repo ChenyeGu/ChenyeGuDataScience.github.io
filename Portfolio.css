@@ -80,6 +80,7 @@ q1{
     }
 
 .chart{
+    margin: auto;
     background-color: white;
     width:350px;
     display: inline-table; 
