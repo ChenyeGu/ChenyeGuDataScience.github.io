@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Chart 2: ILO / Global GDP per capita",
+      "subtitle": ["Credit Outstanding to all members", "divided by Global GDP per capita, Source: IMF"],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"},
+
+
+    "data": {"url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/data_IMF_creditOutstanding_new.csv"},
+    "transform": [{"calculate": "datum.Totals/1000000/datum.World","as": "RealLending"}],
+  
+    "height": 200,
+    "width":250,
+
+    "mark": {
+        "type": "bar", 
+        "color": "rgb(0,47,167)"},
+
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "temporal",
+        "axis": {"title": null, "grid": false, "ticks": true, "labelAngle": 60}
+      },
+
+      "y": {
+        "field": "RealLending",
+        "type": "quantitative",
+        "title": "",
+        "axis": {"grid": false}
+      },
+      
+      "tooltip": [
+
+        {"field": "Year", "type": "temporal", "title": "year", "timeUnit": "year"},
+  
+        {"field": "RealLending", "type": "quantitative", "title": "lending outstanding/GDP per capita(millions)"}
+  
+      ]
+
+    },
+    "config": {}
+  }

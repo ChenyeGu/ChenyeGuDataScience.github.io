@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "title":"Base map:Japan",
+    "height": 350,
+    "data": {
+      "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/jptopojson.json",
+      "format": {"type": "topojson", "feature": "JPN_adm1"}
+    },
+    "projection": {"type": "mercator"},
+    "mark": {"type": "geoshape", "stroke": "darkgray", "strokeWidth": 1},
+    "encoding": {
+      "tooltip": [
+        {"field": "properties.NAME_1", "type": "nominal", "title": "Prefecture"}
+      ]
+    }
+  }

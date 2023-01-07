@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+  
+      "text": "Percentage: Age of arrival in the UK",
+  
+      "subtitle": ["%, Estimates by Census 2021, native residents are exclued", "source: ONS"],
+  
+      "subtitleFontStyle":"italic",
+  
+      "subtitleFontSize":10,
+  
+      "anchor": "start",
+  
+      "color": "black"
+   },
+  
+    "data": {"url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/age.csv"},
+    "mark":{
+  
+   
+  
+        "type": "bar",
+  
+        "color": "#869cd0",
+  
+        "strokeWidth":2,
+  
+        "opacity":0.9
+  
+   
+  
+      },
+    "height": 250,
+    "width": 200,
+  
+    "encoding": {
+      "y": {"field": "Age arrived in the UK", "type": "ordinal", "sort":[], "title": null},
+  
+      "x": {"field": "Proportions", "type": "quantitative", "title": null, "scale": {"domain": [0, 60]}},
+   
+   "tooltip": [
+      {"field": "Age arrived in the UK", "type": "ordinal", "title": "Age arrived in the UK"},  
+          {"field": "Observations", "type": "quantitative", "title": "Number of people"}]
+  }
+      }

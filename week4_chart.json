@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "GoRatings",
+  "title": {
+
+    "text": "Chart: ELO ratings of TOP 10 GO Players",
+
+    "subtitle": "ELO ratings of TOP 10 GO Players",
+
+    "subtitleFontStyle":"italic",
+
+    "subtitleFontSize":10,
+
+    "anchor": "start",
+
+    "color": "black"
+ },
+
+  "data": {"values":[{"Name": "Shin Jinseo", "Elo": 3828}, {"Name": "Byun Sangil", "Elo": 3674}, {"Name": "Park Junghwan", "Elo": 3661}, {"Name": "Li Xuanhao", "Elo": 3661}, {"Name": "Ke Jie", "Elo": 3656}, {"Name": "Ding Hao", "Elo": 3637}, {"Name": "Mi Yuting", "Elo": 3633}, {"Name": "Li Qincheng", "Elo": 3625}, {"Name": "Gu Zihao", "Elo": 3619}, {"Name": "Fan Tingyu", "Elo": 3613}]},
+
+  "mark":{
+
+ 
+
+      "type": "bar",
+
+      "color": "#86d0bb",
+
+      "strokeWidth":2,
+
+      "opacity":1
+
+ 
+
+    },
+  "height": 250,
+  "width": 200,
+
+  "encoding": {
+    "y": {"field": "Name", "type": "ordinal","title":null},
+
+
+
+
+    "x": {"field": "Elo", "type": "quantitative", "title": "ELO Rating"},
+
+
+    "tooltip": [
+
+      {"field": "Name", "type": "ordinal", "title": "Name"},
+  
+      {"field": "Elo", "type": "quantitative", "title": "ELO Rating"}
+  
+      ]
+
+
+    }
+
+
+}

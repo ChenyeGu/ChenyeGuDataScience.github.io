@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "width": 200,
+    "height": 200,
+  
+    "title": {
+        "text": ["Chart: usual residents in England and Wales", "by their country of birth"],
+        "subtitle": "Estimated by Census 2021, native residents are excluded, Source: ONS",
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "black"},
+  
+    "data": { "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/country.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "Value", "type": "quantitative"},
+      "color": {"field": "Region", "type": "nominal","legend": {"orient": "bottom",
+      "columns":2}},
+      
+  
+    "tooltip": [
+          {"field": "Value", "type": "quantitative", "title": "Numbers"}, 
+          {"field": "Region", "type": "nominal", "title": "Region of birth"}
+        ]
+      }
+  }

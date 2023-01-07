@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+     
+       "title": {
+        "text": ["Unemployment rate by country of birth", "Detrended"],
+        "subtitle":"%. Source: Labour force survey",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "black"},
+    
+      "data": {
+      "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/sample1.csv"
+    },
+    
+    "repeat": {"layer": ["native", "migrant", "native_predict", "migrant_predict", "native_error", "migrant_error"]},
+   
+    "spec": {
+        
+        "height": 200,
+        "width": 250,
+ 
+        "mark": {
+            "type":"line",
+            "strokeWidth":2},    
+  
+        "encoding": {
+            "x": {
+                "field": "Quarter",
+                "type": "temporal",
+                "title":"year"},
+    
+            "y": {
+                "field": {"repeat": "layer"},
+                "type": "quantitative",
+                "title": null},
+    
+            "color": {
+                "datum": {"repeat": "layer"},
+                "scale": {"range": ["black", "yellow", "orange", "lightgrey", "lightblue", "pink", "lightgreen"]},
+                "title": null,
+                "legend": {"orient": "bottom",
+                "columns":2}}
+          } 
+      }
+  }

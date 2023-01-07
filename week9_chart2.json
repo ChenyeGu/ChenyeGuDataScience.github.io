@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/CPIH-NET_1.csv"
+  },
+  "height": 200,
+  "width": 250,
+  "title": {
+    "text": "Linear regression: Net migration on CPIH",
+    "subtitle": "Source: ONS & The migration observatory",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "#2f6b8d",
+    "subtitleColor": "#2f6b8d"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "tooltip": {"content": "data"},
+        "color": "purple"
+      },
+      "encoding": {
+        "y": {
+          "field": "NET",
+          "title": "Net migration",
+          "type": "quantitative",
+          "axis": {"tickColor": "#3c87b3", "domain": true, "grid": false}
+        },
+        "x": {
+          "field": "CPIH",
+          "title": "CPIH",
+          "type": "quantitative",
+          "axis": {"tickColor": "#3c87b3", "grid": true}
+        },
+
+        "tooltip":[
+        {"field":"Period", "type": "ordinal", "title":"Period"},
+        {"field":"CPIH", "type": "quantitative", "title":"CPIH Index"},
+        {"field":"NET", "type": "quantitative", "title":"Net migration"}]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#3c87b3"},
+      "transform": [{"regression": "NET", "on": "CPIH"}],
+      "encoding": {
+        "y": {"field": "NET", "type": "quantitative"},
+        "x": {"field": "CPIH", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "NET",
+          "on": "CPIH",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "purple",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ]
+}

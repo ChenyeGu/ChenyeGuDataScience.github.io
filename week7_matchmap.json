@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "title": {
+        "text": ["Gross Domestic Product of Japan", "by prefecture"],
+        "subtitle": "Source:OECD",
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "black"
+    },
+    "height": 350,
+    "data": {
+        "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/jptopojson.json",
+        "format": {"type": "topojson", "feature": "JPN_adm1"}
+    },
+    "projection": {"type": "mercator"},
+    "transform": [
+      {
+        "lookup": "properties.NAME_1",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/jpgdp.csv"
+          },
+          "key": "Region",
+          "fields": ["Value"]
+        }
+      }
+    ],
+    "mark": {"type": "geoshape", "stroke": "darkgray", "strokeWidth": 1},
+    "encoding": {
+      "color": {
+        "field": "Value",
+        "title": "GDP(milloins $)",
+        "type": "quantitative"
+      },
+      "tooltip": [
+        {"field": "properties.NAME_1", "type": "nominal", "title": "Prefecture"},
+        {"field": "Value", "title": "GDP(millinons $)"}
+      ]
+    }
+  }

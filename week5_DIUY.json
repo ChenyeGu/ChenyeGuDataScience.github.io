@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Ungrossed: Investment Trusts owned",
+      "subtitle": "by :Public Sector; Source:ONS",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/data_ONS_DIUY.json",
+      "format": {"type": "json", "property": "years"}
+    },
+  
+    "mark": {"type": "line", "color": "rgb(0,47,167)"},
+    "height": 200,
+    "width": 250,
+    "encoding": {
+      "y": {"field": "value", "type": "quantitative"},
+      "x": {"field": "year", "type": "temporal"},
+      "tooltip": [
+        {"field": "year", "type": "temporal", "title": "year"},
+        {"field": "value", "type": "quantitative", "title": "Index"}
+      ]
+    }
+  }

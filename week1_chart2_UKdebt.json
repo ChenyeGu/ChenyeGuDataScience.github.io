@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "The second chart is the donut chart of UK debt",
+   
+  "title": {
+  "text": "UK debt - by type",
+  "subtitle": ["Source: DMO",""],
+  "subtitleFontStyle":"italic",
+  "subtitleFontSize":10,
+  "anchor": "start",
+  "color": "black"},
+
+  "view":{"stroke":"transparent"},
+
+  "height":250,
+  "width":200,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/data/GiltsInIssueClean.csv"},
+
+  "mark": {
+    "type": "arc", 
+    "innerRadius": 50},
+    
+  "encoding": {
+
+    "theta": {
+      "field": "issueAmount", 
+      "type": "quantitative"},
+
+      "tooltip": [
+
+        {"field": "giltType", "type": "nominal", "title": "Type"},
+    
+        {"field": "issueAmount", "type": "quantitative", "title": "Amount"}
+    
+        ],
+
+    "color": {
+      "field": "giltType", 
+      "type": "nominal",
+      "scale":{"range":["red", "purple", "orange", "green"]},
+      "sort":{
+        "field": "name", 
+        "order":"descending",
+        "op":"count"}
+      }
+
+    }
+}

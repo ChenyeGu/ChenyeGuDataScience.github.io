@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "title": {
+        "text": "Born outside the UK 2021 (percentage) by LA",
+        "subtitle": "Source:ONS",
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "black"
+    },
+    "height": 500,
+    "data": {
+        "url": "https://martinjc.github.io/UK-GeoJSON/json/eng/topo_lad.json",
+        "format": {"type": "topojson", "feature": "lad"}
+    },
+    "projection": {"type": "mercator"},
+    "transform": [
+      {
+        "lookup": "properties.LAD13NM",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ChenyeGu/ChenyeGu.github.io/main/map_passport.csv"
+          },
+          "key": "LA name",
+          "fields": ["value"]
+        }
+      }
+    ],
+    "mark": {"type": "geoshape", "stroke": "darkgray", "strokeWidth": 1},
+    "encoding": {
+      "color": {
+        "field": "value",
+        "title": "percentage",
+        "type": "quantitative"
+      },
+      "tooltip": [
+        {"field": "properties.LAD13NM", "type": "nominal", "title": "Prefecture"},
+        {"field": "value", "title": "Born outside the UK 2021 (percentage)"}
+      ]
+    }
+  }

@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title for the page -->
+    <title>ChenyeGu Data Science Portfolio</title>
+
+    <!-- Link to my style sheet -->
+    <link rel="stylesheet" href="Portfolio.css">
+
+    <!--The next three lines allow the Vega embed-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+
+<body>
+
+    <div class="heading">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div> 
+    </div>
+    
+    <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
+    <div class="Title">
+        <h1>Data Science for Economists Portfolio</h1>
+        <h3>Chenye Gu</h3>
+    </div>
+    
+    <br>
+
+    <div class="Title">       
+        <a href="Project.html" id="link">Project</a>
+        <a href="Portfolio.html" id="link">Portfolio</a>
+        <a href="https://github.com/ChenyeGu/ChenyeGuDataScience.github.io" id="link">Github</a>    
+    </div>
+
+    <br>
+    
+    <div class="myWeek">
+        <h1>Wee1: Embedding Two Charts</h1>
+        <div class="container">
+        <div class="chart" id="Chart1"></div>
+        <p>The first chart trscks the Unemployment rate of aged 16</p>
+        </div>
+        <div class="container">
+        <div class="chart" id="Chart2"> </div>
+        <p>The second chart is the donut chart of UK debt</p>
+        </div>
+    </div> 
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week2: Two Charts: From IMF & FT</h1>
+        <div class="container">
+        <div class="chart" id="Chart3"></div>
+        <p>This chart shows the nominal lending outstanding to all members</p>
+        </div>
+        <div class="container">
+        <div class="chart" id="Chart4"></div>
+        <p>This chart shows the "real" lending outstanding</p>
+        <p>i.e., Credit Outstanding to all members, divided by Global GDP per capita</p>
+        </div>
+        <h3>In noiminal terms, 2022 is the most "risky" year. However, after adjusting for inflation, 1984 is actually the most "risky" year.</h3>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week3: Two charts: inline data objects and visual encodings</h1>
+        <div class="container">
+            <div class="chart" id="Chart5"></div>
+            <p>The line chart tracks the population of Japan, Mexico and United Kingdom</p>
+            <p>during the period of 1980 and 2027.</p>
+            </div>
+        <div class="container">
+            <div class="chart" id="Chart6"></div>
+            <p>The bar chart is just converted from the left line chart.</p>
+            </div>
+        <h3>Although both charts show the number of population in different years, the line chart is more obvious to show the disparity of poplation across countris.</h3>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week4: Data scraper</h1>
+        <p>Click<a href="https://colab.research.google.com/drive/1_crR5-9SOqP3yVlst3EdPyKQYExesvvB" id="link1">here</a>for the google collab file</p>
+        <div class="chart" id="Chart7"></div>
+        <p>The bar chart presents the Elo ratings of Top 10 GO players.</p>
+        <h3>Reason: The website presents the data in TIDY format and the website has few elements so that it is convinient for data scraping.</h3>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week5: Nine charts dashboard</h1>
+        <p>Click<a href="https://colab.research.google.com/drive/16FZqPbAJfafUsOYJTpj-N35du3a-Egpl" id="link1">here</a>for the google collab file</p>
+        <div class="chart1" id="Chart8"></div>
+        <div class="chart1" id="Chart9"></div>
+        <div class="chart1" id="Chart10"></div>
+        <div class="chart1" id="Chart11"></div>
+        <div class="chart1" id="Chart12"></div>
+        <div class="chart1" id="Chart13"></div>
+        <div class="chart1" id="Chart14"></div>
+        <div class="chart1" id="Chart15"></div>
+        <div class="chart1" id="Chart16"></div>
+        <p>The dashboard presents 9 time series from the dataset: Share ownership time series (srs).</p>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week6: Reading Week</h1>
+        <h3>No Tasks</h3>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week7: Map</h1>
+        <div class="chart" id="Chart17"></div>
+        <div class="chart" id="Chart18"></div>
+        <h3>The 2 maps presents a base map of Japan and a choropleth of Gross Domestic Product of Japan by prefecture.</h3>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week8: Festival of economics</h1>
+        <div class="chart" id="Chart19"></div>
+        <div class="chart" id="Chart20"></div>
+        <h3>In talk: Geopolitics and the Global Economy, guests mentioned the effect of decoupling (Emissions From Economic Growth). However, I do not think the decoupling effect occuring everywhere accross the world. </h3>
+        <h3>From the charts, though the decoupling effect seems obvious in America in last tow decades, we cannot confirm that there are absolute decoupling happening in China or worldwide.</h3>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week9: Advanced Charts</h1>
+        <div class="container">
+            <p>Click<a href="https://colab.research.google.com/drive/18i-h2GADsVqJIQtGpoQbrzfJbUFh9qY0" id="link1">here</a>for the google collab file</p>
+            <div class="chart" id="Chart21"></div>
+            </div>
+        <div class="container">
+            <div class="chart" id="Chart22"></div>
+            </div>
+    </div>
+
+    <br>
+
+    <div class="myWeek">
+        <h1>Week10&11: Machine learning</h1>
+        <p>Click<a href="https://colab.research.google.com/drive/1cTlf5oK9OO1QjSw828hZoamkYDqvSF6F" id="link1">here</a>for the google collab file</p>
+        <h3>Task1: regression</h3>
+        <p>Hypothesis: To check whether there is a linear relationship between anuual GDP and population in UK.</p>
+        <div class="container">
+            <img src = "regression.png" width="350" height="300">
+        </div>
+        <p>By running a linear regression, we have a line (y = 0.113x - 5247002.633) with model score 0.88 for our dataset. We also get a second line by using Random Forests method.</p>
+        <br>
+        <h3>Task2: clustering</h3>
+        <p>For the selected 4 time series, two represent GDP:quarter to quarter growth rate with different unit criteria and the other two represent GDP:q-on-q4 growth rate with different index criteria.</p>
+        <div class="container">
+            <img src = "clustering1.png" width="350" height="250">
+            <img src = "clustering2.png" width="350" height="250">
+        </div>
+        <p>By running clustering on time series, We successfully group time series representing the same GDP terms on the same side.</p>
+    </div>
+</body>
+
+
+<script>
+    //Define charts:
+    var myChart1 = "week1_chart1_unemployment.json";
+    var myChart2 = "week1_chart2_UKdebt.json";
+    var myChart3 = "week2_chart1_IMF_Lending.json";
+    var myChart4 = "week2_chart2_IMF_Lending_corrected.json";
+    var myChart5 = "week3_chart1_linechart.json";
+    var myChart6 = "week3_chart2_barchart.json";
+    var myChart7 = "week4_chart.json";
+    var myChart8 = "week5_DEZV.json";
+    var myChart9 = "week5_DFGH.json";
+    var myChart10 = "week5_DFGR.json";
+    var myChart11 = "week5_DFUX.json";
+    var myChart12 = "week5_DFWR.json";
+    var myChart13 = "week5_DITG.json";
+    var myChart14 = "week5_DITI.json";
+    var myChart15 = "week5_DIUQ.json";
+    var myChart16 = "week5_DIUY.json";
+    var myChart17 = "week7_basemap.json";
+    var myChart18 = "week7_matchmap.json";
+    var myChart19 = "week8_chart1.json";
+    var myChart20 = "week8_chart2.json";
+    var myChart21 = "week9_chart1.json";
+    var myChart22 = "week9_chart2.json";
+    // Embed charts:
+    vegaEmbed('#Chart1', myChart1);
+    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart8', myChart8);
+    vegaEmbed('#Chart9', myChart9);
+    vegaEmbed('#Chart10', myChart10);
+    vegaEmbed('#Chart11', myChart11);
+    vegaEmbed('#Chart12', myChart12);
+    vegaEmbed('#Chart13', myChart13);
+    vegaEmbed('#Chart14', myChart14);
+    vegaEmbed('#Chart15', myChart15);
+    vegaEmbed('#Chart16', myChart16);
+    vegaEmbed('#Chart17', myChart17);
+    vegaEmbed('#Chart18', myChart18);
+    vegaEmbed('#Chart19', myChart19);
+    vegaEmbed('#Chart20', myChart20);
+    vegaEmbed('#Chart21', myChart21);
+    vegaEmbed('#Chart22', myChart22);
+
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {myFunction()};
+        
+        function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+        }
+</script>
+
+</html>
+
+
